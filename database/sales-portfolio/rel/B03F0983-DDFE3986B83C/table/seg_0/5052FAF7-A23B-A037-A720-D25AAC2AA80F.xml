@@ -1,0 +1,204 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5052FAF7-A23B-A037-A720-D25AAC2AA80F" schemaObject="2BEB0691-AC37-7996-09C1-A40DE3EFA079" name="ADDRESS">
+<createdBy>anton</createdBy>
+<createdTime>2022-01-16 14:18:07 UTC</createdTime>
+<ownerDesignName>sales-portfolio</ownerDesignName>
+<ordsAlias>table_12</ordsAlias>
+<abbreviation>ADDRESS</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="ADB0AF37-7117-C636-41F8-6EC53EE78F5A">
+<createdBy>anton</createdBy>
+<createdTime>2022-01-16 14:19:30 UTC</createdTime>
+<ownerDesignName>sales-portfolio</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementMinValue>1</autoIncrementMinValue>
+<autoIncrementMaxValue>9999999999999999</autoIncrementMaxValue>
+<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementSequenceName>SQ_ADDRESS</autoIncrementSequenceName>
+<autoIncrementGenerateTrigger>false</autoIncrementGenerateTrigger>
+</Column>
+<Column name="CREATED" id="3A153D31-55A2-9C7B-CAFB-68234E913EE5">
+<createdBy>anton</createdBy>
+<createdTime>2022-01-16 14:19:30 UTC</createdTime>
+<ownerDesignName>sales-portfolio</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>91229484-D19C-D458-8647-333C7FFE7B60</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UPDATED" id="4913124B-6121-9D56-3C5A-80ADBC545659">
+<createdBy>anton</createdBy>
+<createdTime>2022-01-16 14:19:30 UTC</createdTime>
+<ownerDesignName>sales-portfolio</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>91229484-D19C-D458-8647-333C7FFE7B60</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CREATED_BY" id="0A69E946-3621-D353-368A-F3CB0015D719">
+<createdBy>anton</createdBy>
+<createdTime>2022-01-16 14:19:30 UTC</createdTime>
+<ownerDesignName>sales-portfolio</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UPDATED_BY" id="D56FF585-A518-55F7-0658-6B94A40994F8">
+<createdBy>anton</createdBy>
+<createdTime>2022-01-16 14:19:30 UTC</createdTime>
+<ownerDesignName>sales-portfolio</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ADDRESS_LINE1" id="42C77C65-7780-B7A0-BF93-F69015878B6F">
+<createdBy>anton</createdBy>
+<createdTime>2022-01-16 14:19:58 UTC</createdTime>
+<ownerDesignName>sales-portfolio</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ADDRESS_LINE2" id="0DD4EF03-7F73-FC4A-C8D8-151F0664C116">
+<createdBy>anton</createdBy>
+<createdTime>2022-01-16 14:20:13 UTC</createdTime>
+<ownerDesignName>sales-portfolio</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ADDRESS_LINE3" id="E0FF1F24-6091-AA9B-62EC-38B542254872">
+<createdBy>anton</createdBy>
+<createdTime>2022-01-16 14:20:25 UTC</createdTime>
+<ownerDesignName>sales-portfolio</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ADDRESS_LINE4" id="494A90FA-56F1-6FC8-8B7B-6D1C0CFB64FB">
+<createdBy>anton</createdBy>
+<createdTime>2022-01-16 14:20:35 UTC</createdTime>
+<ownerDesignName>sales-portfolio</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CITY" id="7E399C5A-9336-55AB-EFF4-44EAAFBB1CC0">
+<createdBy>anton</createdBy>
+<createdTime>2022-01-16 14:20:54 UTC</createdTime>
+<ownerDesignName>sales-portfolio</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="STATE" id="CDF33D6F-C739-2798-44F7-7DE06E5D39F6">
+<createdBy>anton</createdBy>
+<createdTime>2022-01-16 14:21:08 UTC</createdTime>
+<ownerDesignName>sales-portfolio</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ZIPCODE" id="38D16EEE-358D-E5C0-A7FF-C6688EABE239">
+<createdBy>anton</createdBy>
+<createdTime>2022-01-16 14:21:24 UTC</createdTime>
+<ownerDesignName>sales-portfolio</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="COUNTRY" id="9EC8D741-F964-31B1-F306-BCC4E689781C">
+<createdBy>anton</createdBy>
+<createdTime>2022-01-16 14:22:10 UTC</createdTime>
+<ownerDesignName>sales-portfolio</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="STATUS" id="0C44FDAE-F33D-0FFC-81B5-627CF3F9BB5F">
+<createdBy>anton</createdBy>
+<createdTime>2022-01-16 14:22:32 UTC</createdTime>
+<ownerDesignName>sales-portfolio</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<defaultValue>ACTIVE</defaultValue>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="83BE6B6F-F1C7-F194-A91E-D5AE9F998BD6" name="ADDRESS_PK">
+<createdBy>anton</createdBy>
+<createdTime>2022-01-16 14:37:32 UTC</createdTime>
+<ownerDesignName>sales-portfolio</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="ADB0AF37-7117-C636-41F8-6EC53EE78F5A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+<tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.constraint.TableLevelConstraint">
+<tableCheckConstraint name="ADDRESS_CK_1" directorySegmentName="seg_0" id="418A184A-57C8-D9DF-5446-F045BDC4992D">
+<createdBy>anton</createdBy>
+<createdTime>2022-01-16 14:23:10 UTC</createdTime>
+<ownerDesignName>sales-portfolio</ownerDesignName>
+<rule><![CDATA[STATUS IN ('PENDING', 'ACTIVE', 'INACTIVE')]]></rule>
+</tableCheckConstraint>
+</tableCheckConstraints>
+</Table>

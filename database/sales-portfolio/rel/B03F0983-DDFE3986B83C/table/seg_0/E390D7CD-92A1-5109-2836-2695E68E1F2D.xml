@@ -1,0 +1,169 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E390D7CD-92A1-5109-2836-2695E68E1F2D" schemaObject="2BEB0691-AC37-7996-09C1-A40DE3EFA079" name="DOCUMENT">
+<createdBy>anton</createdBy>
+<createdTime>2022-01-16 14:59:36 UTC</createdTime>
+<ownerDesignName>sales-portfolio</ownerDesignName>
+<ordsAlias>table_21</ordsAlias>
+<abbreviation>DOCUMENT</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="8AA1FE90-406B-0970-E379-0948812AFDC7">
+<createdBy>anton</createdBy>
+<createdTime>2022-01-16 14:59:54 UTC</createdTime>
+<ownerDesignName>sales-portfolio</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementMinValue>1</autoIncrementMinValue>
+<autoIncrementMaxValue>9999999999999999</autoIncrementMaxValue>
+<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementSequenceName>SQ_DOCUMENT</autoIncrementSequenceName>
+<autoIncrementGenerateTrigger>false</autoIncrementGenerateTrigger>
+</Column>
+<Column name="CREATED" id="BFAC7E6D-723D-20F5-E85E-1066C0281723">
+<createdBy>anton</createdBy>
+<createdTime>2022-01-16 14:59:54 UTC</createdTime>
+<ownerDesignName>sales-portfolio</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>91229484-D19C-D458-8647-333C7FFE7B60</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UPDATED" id="F504E20E-2CF0-109E-66FA-A27716C25B0B">
+<createdBy>anton</createdBy>
+<createdTime>2022-01-16 14:59:54 UTC</createdTime>
+<ownerDesignName>sales-portfolio</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>91229484-D19C-D458-8647-333C7FFE7B60</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CREATED_BY" id="C7C0404C-FDE0-F2F9-9997-66A7510C5B65">
+<createdBy>anton</createdBy>
+<createdTime>2022-01-16 14:59:54 UTC</createdTime>
+<ownerDesignName>sales-portfolio</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UPDATED_BY" id="8D0422D5-EFDB-6A6F-7BAE-AFC15051D10F">
+<createdBy>anton</createdBy>
+<createdTime>2022-01-16 14:59:54 UTC</createdTime>
+<ownerDesignName>sales-portfolio</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="STATUS" id="32258F3B-6AA7-D9FE-C7EC-43FAF4EC7A48">
+<createdBy>anton</createdBy>
+<createdTime>2022-01-16 14:59:54 UTC</createdTime>
+<ownerDesignName>sales-portfolio</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<defaultValue>PENDING</defaultValue>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TYPE" id="FA8B82A4-E3E5-F3CE-144A-907217EFA54A">
+<createdBy>anton</createdBy>
+<createdTime>2022-01-16 15:00:27 UTC</createdTime>
+<ownerDesignName>sales-portfolio</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SERIAL" id="20A89FA2-8C4C-70A1-15CA-31DF49CA5EE3">
+<createdBy>anton</createdBy>
+<createdTime>2022-01-16 15:03:22 UTC</createdTime>
+<ownerDesignName>sales-portfolio</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="OBSERVATION" id="AB018502-69DA-74C7-8B0C-7800C50C3C22">
+<createdBy>anton</createdBy>
+<createdTime>2022-01-16 15:03:30 UTC</createdTime>
+<ownerDesignName>sales-portfolio</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT028</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IMAGE" id="8AA1685F-273E-1912-B3B3-0DF86AC51BA6">
+<createdBy>anton</createdBy>
+<createdTime>2022-01-16 15:03:42 UTC</createdTime>
+<ownerDesignName>sales-portfolio</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT029</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4863C4B7-62B7-5204-2D1B-BE3813EF291E" name="DOCUMENT_PK">
+<createdBy>anton</createdBy>
+<createdTime>2022-01-16 15:03:55 UTC</createdTime>
+<ownerDesignName>sales-portfolio</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8AA1FE90-406B-0970-E379-0948812AFDC7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DAED4F2F-D0FE-7074-7588-0981D453E7C8" name="DOCUMENT__IDX">
+<createdBy>anton</createdBy>
+<createdTime>2022-01-16 15:04:03 UTC</createdTime>
+<ownerDesignName>sales-portfolio</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="32258F3B-6AA7-D9FE-C7EC-43FAF4EC7A48"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+<tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.constraint.TableLevelConstraint">
+<tableCheckConstraint name="DOCUMENT_CK_1" directorySegmentName="seg_0" id="D72D3B75-7F58-944D-6F26-F11DA23C32B2">
+<createdBy>anton</createdBy>
+<createdTime>2022-01-16 15:00:12 UTC</createdTime>
+<ownerDesignName>sales-portfolio</ownerDesignName>
+<rule><![CDATA[STATUS IN ('PENDING', 'ACTIVE', 'REJECTED','INACTIVE')]]></rule>
+</tableCheckConstraint>
+<tableCheckConstraint name="DOCUMENT_CK_2" directorySegmentName="seg_0" id="98FA3DE6-ABB5-E049-9A13-050D2E699846">
+<createdBy>anton</createdBy>
+<createdTime>2022-01-16 15:03:00 UTC</createdTime>
+<ownerDesignName>sales-portfolio</ownerDesignName>
+<rule><![CDATA[TYPE IN ('BOND', 'CERTIFICATE', 'CHARTER', 'COMPACT', 'CONSTITUTION', 'CONTRACT', 'COVENANT', 'DIPLOMA', 'GUARANTEE', 'GUARANTY', 'LICENSE', 'PASSPORT', 'LICENSE', 'PLEDGE', 'SURETY', 'WARRANT')]]></rule>
+</tableCheckConstraint>
+</tableCheckConstraints>
+</Table>

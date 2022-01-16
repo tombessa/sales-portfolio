@@ -1,0 +1,173 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="015A69FA-D065-587E-A3BF-65641DAD9734" schemaObject="2BEB0691-AC37-7996-09C1-A40DE3EFA079" name="PAYMENT">
+<createdBy>anton</createdBy>
+<createdTime>2022-01-16 16:09:24 UTC</createdTime>
+<ownerDesignName>sales-portfolio</ownerDesignName>
+<ordsAlias>table_30</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="418E0D04-4D18-9B46-6121-629BCB27522E">
+<createdBy>anton</createdBy>
+<createdTime>2022-01-16 16:09:46 UTC</createdTime>
+<ownerDesignName>sales-portfolio</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementMinValue>1</autoIncrementMinValue>
+<autoIncrementMaxValue>9999999999999999</autoIncrementMaxValue>
+<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementSequenceName>SQ_PAYMENT</autoIncrementSequenceName>
+<autoIncrementGenerateTrigger>false</autoIncrementGenerateTrigger>
+</Column>
+<Column name="CREATED" id="2EEB3441-CC0F-C5FB-67EA-DDA3595E7E44">
+<createdBy>anton</createdBy>
+<createdTime>2022-01-16 16:09:46 UTC</createdTime>
+<ownerDesignName>sales-portfolio</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>91229484-D19C-D458-8647-333C7FFE7B60</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UPDATED" id="BF81AE45-39F9-A3D9-3EE5-B622EB5C2309">
+<createdBy>anton</createdBy>
+<createdTime>2022-01-16 16:09:46 UTC</createdTime>
+<ownerDesignName>sales-portfolio</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>91229484-D19C-D458-8647-333C7FFE7B60</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CREATED_BY" id="51AB649E-9531-5986-EFF5-7E11B7FA09E9">
+<createdBy>anton</createdBy>
+<createdTime>2022-01-16 16:09:46 UTC</createdTime>
+<ownerDesignName>sales-portfolio</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UPDATED_BY" id="20B9443E-A9AD-7759-EF5C-4F742367D877">
+<createdBy>anton</createdBy>
+<createdTime>2022-01-16 16:09:46 UTC</createdTime>
+<ownerDesignName>sales-portfolio</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="STATUS" id="A5C47E91-668B-0A1D-E24B-4C3B2CAC7E83">
+<createdBy>anton</createdBy>
+<createdTime>2022-01-16 16:09:46 UTC</createdTime>
+<ownerDesignName>sales-portfolio</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<defaultValue>PENDING</defaultValue>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TYPE" id="94DAF332-A321-F61E-7B20-CAC447155ECB">
+<createdBy>anton</createdBy>
+<createdTime>2022-01-16 16:10:39 UTC</createdTime>
+<ownerDesignName>sales-portfolio</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="AMOUNT" id="B7B3165F-D50F-81CF-979E-084D5380D08D">
+<createdBy>anton</createdBy>
+<createdTime>2022-01-16 16:10:59 UTC</createdTime>
+<ownerDesignName>sales-portfolio</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT043</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ORDER_ID" id="B785A65D-3620-1E67-0CEB-D7970A2E2F95">
+<createdBy>anton</createdBy>
+<createdTime>2022-01-16 16:11:16 UTC</createdTime>
+<ownerDesignName>sales-portfolio</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4D2534FE-C75F-1ECC-41CD-B8B6BAC4B6D4" referredColumn="AC40A375-BDCB-0154-99F5-5C399FFF7895"/>
+</associations>
+</Column>
+<Column name="RECEIVED BY" id="20794413-CB1E-2AAD-CB32-BF062E23C620">
+<createdBy>anton</createdBy>
+<createdTime>2022-01-16 16:13:01 UTC</createdTime>
+<ownerDesignName>sales-portfolio</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A3CEA406-F082-F0AF-8DDF-5F61CF44511D" name="PAYMENT_PK">
+<createdBy>anton</createdBy>
+<createdTime>2022-01-16 16:11:32 UTC</createdTime>
+<ownerDesignName>sales-portfolio</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="418E0D04-4D18-9B46-6121-629BCB27522E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C0763BC9-C1D3-A0F7-6069-0A65F71B1205" name="PAYMENT_ORDER_FK">
+<createdBy>anton</createdBy>
+<createdTime>2022-01-16 16:11:27 UTC</createdTime>
+<ownerDesignName>sales-portfolio</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B785A65D-3620-1E67-0CEB-D7970A2E2F95"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+<tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.constraint.TableLevelConstraint">
+<tableCheckConstraint name="PAYMENT_CK_1" directorySegmentName="seg_0" id="84D92959-67D5-D75C-C5C0-9ECFEEE8CD0A">
+<createdBy>anton</createdBy>
+<createdTime>2022-01-16 16:10:05 UTC</createdTime>
+<ownerDesignName>sales-portfolio</ownerDesignName>
+<rule><![CDATA[STATUS IN ('PENDING', 'ACTIVE', 'REJECTED', 'INACTIVE')]]></rule>
+</tableCheckConstraint>
+<tableCheckConstraint name="PAYMENT_CK_2" directorySegmentName="seg_0" id="FA3C43BB-FC35-ED43-1333-08055D61B98F">
+<createdBy>anton</createdBy>
+<createdTime>2022-01-16 16:12:26 UTC</createdTime>
+<ownerDesignName>sales-portfolio</ownerDesignName>
+<rule><![CDATA[TYPE IN ('CREDIT', 'TRANSFER ACCOUNT', 'IN CASH', 'DEBIT', 'OTHER')]]></rule>
+</tableCheckConstraint>
+</tableCheckConstraints>
+</Table>
