@@ -1,5 +1,6 @@
 package github.com.tombessa.salesportfolio.model;
 
+import github.com.tombessa.salesportfolio.enums.PersonStatusEnum;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
@@ -16,12 +17,13 @@ import java.util.List;
 @Entity
 @Table(name = "people", schema = "sales")
 public class Person extends BaseEntity{
+    @JoinColumn(name = "address_id", referencedColumnName="id", foreignKey = @ForeignKey(name = "entity_address_address_fk"))
+    @ManyToOne(fetch=FetchType.LAZY)
+    private Address address;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "status", length = 20)
-    private String status;
-
-    @Column(name = "address_id", nullable = false)
-    private Integer addressId;
+    private PersonStatusEnum status;
 
     @Column(name = "name")
     private String name;

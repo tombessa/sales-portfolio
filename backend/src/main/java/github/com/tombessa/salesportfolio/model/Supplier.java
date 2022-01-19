@@ -46,4 +46,8 @@ public class Supplier extends BaseEntity{
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "supplier")
     private List<Product> productList = new ArrayList<>();
 
+    @Builder.Default
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "supplier")
+    private List<Order> orderList = new ArrayList<>();
+
 }

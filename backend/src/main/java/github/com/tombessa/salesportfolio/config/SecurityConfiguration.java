@@ -1,32 +1,22 @@
 package github.com.tombessa.salesportfolio.config;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import github.com.tombessa.salesportfolio.repository.UserAccessRepository;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-/**
- *
- * @author antonyonne.bessa
- */
-
-
-@Configuration
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
-    public static String REALM = "SALES";
 
-    @Autowired
-    public void configureGlobalSecurity(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication().withUser("sales").password(passwordEncoder().encode("sales")).roles("USER");
+    private AuthenticationManagerBuilder auth;
+    private final UserAccessRepository userAccessRepository;
+
+    public SecurityConfiguration(UserAccessRepository userAccessRepository) {
+        this.userAccessRepository = userAccessRepository;
     }
 
     @Override
@@ -34,24 +24,44 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http.csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/api/**").hasRole("USER")
-                .and().httpBasic().realmName(REALM).authenticationEntryPoint(getBasicAuthEntryPoint())
-                .and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.ALWAYS);//We don't need sessions to be created.
+                .and()
+                .httpBasic();
 
     }
 
-    @Bean
-    public CustomBasicAuthenticationEntryPoint getBasicAuthEntryPoint() {
-        return new CustomBasicAuthenticationEntryPoint();
-    }
-
-    /* To allow Pre-flight [OPTIONS] request from browser */
     @Override
-    public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers(HttpMethod.OPTIONS, "/**");
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        this.auth = auth;
+        //Root user
+        auth.inMemoryAuthentication().withUser("sales").password(passwordEncoder().encode("sales")).roles("USER");
+        //Loading all users from database
+        this.userAccessRepository.findAll().forEach(userAccess -> {
+            try {
+                if (userAccess.getRole() != null)
+                    auth.inMemoryAuthentication()
+                            .withUser(userAccess.getLogin())
+                            .password(passwordEncoder().encode(userAccess.getPassword()))
+                            .roles(userAccess.getRole().getName());
+                else
+                    auth.inMemoryAuthentication()
+                            .withUser(userAccess.getLogin())
+                            .password(passwordEncoder().encode(userAccess.getPassword()))
+                            .roles("USER");
+            }catch(Exception e){}
+        });
+
     }
 
+    public void changePassword(String username, String password, String roleName) throws Exception {
+        auth.inMemoryAuthentication()
+                .withUser(username)
+                .password(passwordEncoder().encode(password))
+                .roles(roleName);
+    }
+
+
     @Bean
-    public BCryptPasswordEncoder passwordEncoder() {
+    public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 }

@@ -1,5 +1,6 @@
 package github.com.tombessa.salesportfolio.model;
 
+import github.com.tombessa.salesportfolio.enums.RoleStatusEnum;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
@@ -20,8 +21,9 @@ public class Role extends BaseEntity{
     @Column(name = "name", length = 50)
     private String name;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "status", length = 10)
-    private String status;
+    private RoleStatusEnum status;
 
     @Builder.Default
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "role")

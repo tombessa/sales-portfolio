@@ -26,6 +26,10 @@ public class Order extends BaseEntity{
     @Column(name = "status", length = 20)
     private String status;
 
+    @JoinColumn(name = "supplier_id", referencedColumnName="id", foreignKey = @ForeignKey(name = "order_supplier_fk"))
+    @ManyToOne(fetch=FetchType.LAZY)
+    private Supplier supplier;
+
 
     @JoinColumn(name = "client_id", referencedColumnName="id", foreignKey = @ForeignKey(name = "order_client_fk"))
     @ManyToOne(fetch=FetchType.LAZY)

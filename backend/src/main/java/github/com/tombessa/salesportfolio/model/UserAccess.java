@@ -1,5 +1,6 @@
 package github.com.tombessa.salesportfolio.model;
 
+import github.com.tombessa.salesportfolio.enums.UserAccessStatusEnum;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -23,8 +24,9 @@ import java.time.Instant;
 })
 public class UserAccess extends BaseEntity{
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "status", length = 10)
-    private String status;
+    private UserAccessStatusEnum status;
 
     @Column(name = "login", length = 15)
     private String login;

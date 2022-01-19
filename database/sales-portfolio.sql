@@ -9,8 +9,8 @@
 
 -- predefined type, no DDL - XMLTYPE
 
---DROP SCHEMA IF EXISTS sales CASCADE;
---CREATE SCHEMA IF NOT EXISTS sales;
+DROP SCHEMA sales CASCADE;
+CREATE SCHEMA sales;
 
 CREATE SEQUENCE sales.sq_address START WITH 1 MINVALUE 1 MAXVALUE 9999999999999999 ;
 
@@ -56,7 +56,8 @@ CREATE TABLE  sales.address (
     state         CHARACTER VARYING(255),
     zipcode       CHARACTER VARYING(10),
     country       CHARACTER VARYING(20),
-    status        CHARACTER VARYING(10) DEFAULT 'ACTIVE'
+    status        CHARACTER VARYING(10) DEFAULT 'ACTIVE',
+	version       INTEGER
 );
 
 ALTER TABLE sales.address
@@ -75,7 +76,8 @@ CREATE TABLE sales.client (
     status      CHARACTER VARYING(20) DEFAULT 'ACTIVE',
     people_id   INTEGER NOT NULL,
     name        CHARACTER VARYING(255),
-    observation TEXT
+    observation TEXT,
+	version       INTEGER
 );
 
 ALTER TABLE sales.client
@@ -95,7 +97,8 @@ CREATE TABLE sales.document (
     type        CHARACTER VARYING(10),
     serial      CHARACTER VARYING(255),
     observation TEXT,
-    image       bytea
+    image       bytea,
+	version       INTEGER
 );
 
 CREATE INDEX document_idx ON
@@ -131,7 +134,8 @@ CREATE TABLE sales.entity_address (
     supplier_id INTEGER NOT NULL,
     address_id  INTEGER NOT NULL,
     people_id   INTEGER NOT NULL,
-    client_id   INTEGER NOT NULL
+    client_id   INTEGER NOT NULL,
+	version       INTEGER
 );
 
 ALTER TABLE sales.entity_address
@@ -166,7 +170,8 @@ CREATE TABLE sales.entity_document (
     supplier_id INTEGER NOT NULL,
     document_id INTEGER NOT NULL,
     people_id   INTEGER NOT NULL,
-    client_id   INTEGER NOT NULL
+    client_id   INTEGER NOT NULL,
+	version       INTEGER
 );
 
 ALTER TABLE sales.entity_document
@@ -197,12 +202,14 @@ CREATE TABLE sales."order" (
     created_by          CHARACTER VARYING(15),
     updated_by          CHARACTER VARYING(15),
     status              CHARACTER VARYING(20) DEFAULT 'PENDING',
-    client_id           INTEGER NOT NULL,
+    client_id           INTEGER,
+	supplier_id         INTEGER,
     delivery_address_id INTEGER NOT NULL,
     billing_address_id  INTEGER NOT NULL,
     amount              NUMERIC(10, 2),
     amount_paid         NUMERIC(10, 2),
-    discount_rate       NUMERIC(10, 2)
+    discount_rate       NUMERIC(10, 2),
+	version       INTEGER
 );
 
 CREATE INDEX order_idx ON
@@ -251,7 +258,8 @@ CREATE TABLE sales.order_item (
     qtd              INTEGER,
     unitary_value  NUMERIC(10, 2),
     total_value   NUMERIC(10, 2),
-    discount_rate    NUMERIC(10, 2)
+    discount_rate    NUMERIC(10, 2),
+	version       INTEGER
 );
 
 CREATE INDEX order_item_idx ON
@@ -278,7 +286,8 @@ CREATE TABLE sales.payment (
     type          CHARACTER VARYING(50),
     amount        NUMERIC(10, 2),
     order_id      INTEGER NOT NULL,
-    RECEIVED BY CHARACTER VARYING(15)
+    RECEIVED_BY CHARACTER VARYING(15),
+	version       INTEGER
 );
 
 ALTER TABLE sales.payment
@@ -304,7 +313,8 @@ CREATE TABLE sales.people (
     cellphone  CHARACTER VARYING(20),
     otherphone CHARACTER VARYING(20),
     email      CHARACTER VARYING(25),
-    birthdate  TIMESTAMP
+    birthdate  TIMESTAMP,
+	version       INTEGER
 );
 
 ALTER TABLE sales.people
@@ -323,7 +333,8 @@ CREATE TABLE sales.price (
     status        CHARACTER VARYING(10) DEFAULT 'ACTIVE',
     value         NUMERIC(10, 2),
     profit_margin NUMERIC(10, 2),
-    product_id    INTEGER NOT NULL
+    product_id    INTEGER NOT NULL,
+	version       INTEGER
 );
 
 CREATE INDEX price_idx ON
@@ -357,7 +368,8 @@ CREATE TABLE sales.product (
     description TEXT,
     picture     bytea,
     status      CHARACTER VARYING(10) DEFAULT 'ACTIVE',
-    supplier_id INTEGER NOT NULL
+    supplier_id INTEGER NOT NULL,
+	version       INTEGER
 );
 
 ALTER TABLE sales.product
@@ -374,7 +386,8 @@ CREATE TABLE sales.role (
     created_by CHARACTER VARYING(15),
     updated_by CHARACTER VARYING(15),
     name       CHARACTER VARYING(50),
-    status     CHARACTER VARYING(10) DEFAULT 'ACTIVE'
+    status     CHARACTER VARYING(10) DEFAULT 'ACTIVE',
+	version       INTEGER
 );
 
 ALTER TABLE sales.role
@@ -393,7 +406,8 @@ CREATE TABLE sales.supplier (
     status      CHARACTER VARYING(20) DEFAULT 'ACTIVE',
     name        CHARACTER VARYING(255),
     people_id   INTEGER NOT NULL,
-    observation TEXT
+    observation TEXT,
+	version       INTEGER
 );
 
 CREATE INDEX supplier_idx ON
@@ -425,7 +439,8 @@ CREATE TABLE sales.user_access (
     login      CHARACTER VARYING(15),
     password   TEXT,
     people_id  INTEGER NOT NULL,
-    role_id    INTEGER NOT NULL
+    role_id    INTEGER NOT NULL,
+	version       INTEGER
 );
 
 CREATE INDEX user_access_idx ON
@@ -486,6 +501,10 @@ ALTER TABLE sales."order"
 ALTER TABLE sales."order"
     ADD CONSTRAINT order_client_fk FOREIGN KEY ( client_id )
         REFERENCES sales.client ( id );
+
+ALTER TABLE sales."order"
+    ADD CONSTRAINT order_supplier_fk FOREIGN KEY ( supplier_id )
+        REFERENCES sales.supplier ( id );
 
 ALTER TABLE sales.order_item
     ADD CONSTRAINT order_item_order_fk FOREIGN KEY ( order_id )

@@ -1,5 +1,6 @@
 package github.com.tombessa.salesportfolio.model;
 
+import github.com.tombessa.salesportfolio.enums.AddressStatusEnum;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
@@ -42,7 +43,8 @@ public class Address extends BaseEntity{
     private String country;
 
     @Column(name = "status", length = 10)
-    private String status;
+    @Enumerated(EnumType.STRING)
+    private AddressStatusEnum status;
 
     @Builder.Default
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "deliveryAddress")
@@ -55,5 +57,9 @@ public class Address extends BaseEntity{
     @Builder.Default
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "address")
     private List<EntityAddress> listEntityAddress = new ArrayList<>();
+
+    @Builder.Default
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "address")
+    private List<Person> listPerson = new ArrayList<>();
 
 }
