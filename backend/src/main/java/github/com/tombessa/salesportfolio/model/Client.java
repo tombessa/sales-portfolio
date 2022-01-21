@@ -1,10 +1,10 @@
 package github.com.tombessa.salesportfolio.model;
 
+import github.com.tombessa.salesportfolio.enums.ClientStatusEnum;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
-import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,9 +16,9 @@ import java.util.List;
 @Entity
 @Table(name = "client", schema = "sales")
 public class Client extends BaseEntity{
-
+    @Enumerated(EnumType.STRING)
     @Column(name = "status", length = 20)
-    private String status;
+    private ClientStatusEnum status;
 
 
     @JoinColumn(name = "people_id", referencedColumnName="id", foreignKey = @ForeignKey(name = "client_people_fk"))

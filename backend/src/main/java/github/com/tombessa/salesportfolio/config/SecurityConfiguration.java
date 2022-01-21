@@ -37,26 +37,20 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         //Loading all users from database
         this.userAccessRepository.findAll().forEach(userAccess -> {
             try {
-                if (userAccess.getRole() != null)
-                    auth.inMemoryAuthentication()
-                            .withUser(userAccess.getLogin())
-                            .password(passwordEncoder().encode(userAccess.getPassword()))
-                            .roles(userAccess.getRole().getName());
-                else
-                    auth.inMemoryAuthentication()
+                auth.inMemoryAuthentication()
                             .withUser(userAccess.getLogin())
                             .password(passwordEncoder().encode(userAccess.getPassword()))
                             .roles("USER");
-            }catch(Exception e){}
+            }catch(Exception e){ e.printStackTrace();}
         });
 
     }
 
-    public void changePassword(String username, String password, String roleName) throws Exception {
+    public void changePassword(String username, String password) throws Exception {
         auth.inMemoryAuthentication()
                 .withUser(username)
                 .password(passwordEncoder().encode(password))
-                .roles(roleName);
+                .roles("USER");
     }
 
 

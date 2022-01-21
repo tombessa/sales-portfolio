@@ -1,0 +1,65 @@
+//1) Create Role List
+[{
+  "name": "Administration",
+  "status": "ACTIVE"
+},
+{
+  "name": "Sales Representation",
+  "status": "ACTIVE"
+},
+{
+  "name": "Acquisition Representation",
+  "status": "ACTIVE"
+}]
+
+
+//2) Update Role
+{
+  "id": 1,
+  "name": "Administration",
+  "status": "ACTIVE"
+}
+
+//3) Create People with Access and Role
+{
+	"status": "ACTIVE",
+	"name": "Antonyonne Soares Bessa",
+	"cellPhone": "+5521979397316",
+	"otherPhone": "+5521999999999",
+	"email": "tombessa@gmail.com",
+	"birthdate": "1987-02-16",
+	"userAccessList" : [
+			{
+				"login": "tombessa",
+				"password": "flamengo",
+				"status": "ACTIVE",
+				//Role also created
+				"role": {
+					"id": 1,
+					"created": "2022-01-20 19:17:42",
+					"updated": "2022-01-20 19:17:42",
+					"createdBy": "sales",
+					"updatedBy": "sales",
+					"version": 0,
+					"name": "Administration",
+					"status": "ACTIVE"
+					}
+			}
+		],
+	"entityAddressList": [
+	{
+		"status": "ACTIVE",        
+		"address": {		  
+			  "addressLine1": "Address Line 1",
+			  "addressLine2": "Address Line 2",
+			  "addressLine3": "Address Line 3",
+			  "addressLine4": "Address Line 4",
+			  "city": "Miami",
+			  "state": "FL",
+			  "zipcode": "24222",
+			  "country": "United States",
+			  "status": "ACTIVE"
+		}
+	}
+  ]  
+}

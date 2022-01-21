@@ -1,5 +1,7 @@
 package github.com.tombessa.salesportfolio.model;
 
+import github.com.tombessa.salesportfolio.enums.AddressStatusEnum;
+import github.com.tombessa.salesportfolio.enums.EntityAddressStatusEnum;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -7,7 +9,6 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
-import java.time.Instant;
 
 @Data
 @AllArgsConstructor
@@ -23,7 +24,8 @@ import java.time.Instant;
 public class EntityAddress extends BaseEntity{
 
     @Column(name = "status", length = 20)
-    private String status;
+    @Enumerated(EnumType.STRING)
+    private EntityAddressStatusEnum status;
 
 
     @JoinColumn(name = "supplier_id", referencedColumnName="id", foreignKey = @ForeignKey(name = "entity_address_supplier_fk"))
@@ -32,7 +34,7 @@ public class EntityAddress extends BaseEntity{
 
 
     @JoinColumn(name = "address_id", referencedColumnName="id", foreignKey = @ForeignKey(name = "entity_address_address_fk"))
-    @ManyToOne(fetch=FetchType.LAZY)
+    @ManyToOne(cascade=CascadeType.ALL, fetch=FetchType.LAZY)
     private Address address;
 
 

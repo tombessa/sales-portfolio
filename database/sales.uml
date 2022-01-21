@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DATABASE</ID>
+  <OriginalElement>fa808392-2a76-4c5a-8b1c-166b6e2d5b39.SCHEMA:sales.sales</OriginalElement>
+  <nodes>
+    <node x="578.1545493197281" y="1390.0">fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.entity_document</node>
+    <node x="452.8958333333338" y="1062.0">fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.client</node>
+    <node x="228.40795068027245" y="448.0">fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.role</node>
+    <node x="337.8029336734697" y="1390.0">fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.entity_address</node>
+    <node x="98.83333333333337" y="0.0">fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.address</node>
+    <node x="88.45833333333383" y="1368.0">fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.order</node>
+    <node x="449.50956632653083" y="393.0">fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.people</node>
+    <node x="673.4045493197281" y="755.0">fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.supplier</node>
+    <node x="99.45833333333383" y="1750.0">fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.payment</node>
+    <node x="774.9912840136058" y="1717.0">fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.order_item</node>
+    <node x="362.8958333333338" y="744.0">fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.user_access</node>
+    <node x="868.1970663265308" y="1401.0">fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.price</node>
+    <node x="725.5095663265308" y="1051.0">fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.document</node>
+    <node x="932.6970663265307" y="1051.0">fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.product</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.people" target="fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.address" relationship="REFERENCES">
+      <point x="0.0" y="-148.5" />
+      <point x="530.0095663265308" y="372.0" />
+      <point x="389.75956632653083" y="372.0" />
+      <point x="389.75956632653083" y="362.0" />
+      <point x="244.6666666666667" y="362.0" />
+      <point x="58.33333333333334" y="170.5" />
+    </edge>
+    <edge source="fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.payment" target="fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.order" relationship="REFERENCES">
+      <point x="0.0" y="-126.5" />
+      <point x="0.0" y="148.5" />
+    </edge>
+    <edge source="fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.order_item" target="fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.order" relationship="REFERENCES">
+      <point x="-61.33333333333334" y="-159.5" />
+      <point x="805.6579506802725" y="1696.0" />
+      <point x="180.45833333333383" y="1696.0" />
+      <point x="0.0" y="148.5" />
+    </edge>
+    <edge source="fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.entity_address" target="fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.address" relationship="REFERENCES">
+      <point x="-59.625" y="-126.5" />
+      <point x="357.6779336734697" y="1336.0" />
+      <point x="217.90795068027245" y="1336.0" />
+      <point x="217.90795068027245" y="372.0" />
+      <point x="389.75956632653083" y="372.0" />
+      <point x="389.75956632653083" y="362.0" />
+      <point x="244.6666666666667" y="362.0" />
+      <point x="58.33333333333334" y="170.5" />
+    </edge>
+    <edge source="fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.price" target="fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.product" relationship="REFERENCES">
+      <point x="0.0" y="-115.5" />
+      <point x="960.6970663265308" y="1346.0" />
+      <point x="1012.1970663265307" y="1346.0" />
+      <point x="0.0" y="126.5" />
+    </edge>
+    <edge source="fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.user_access" target="fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.role" relationship="REFERENCES">
+      <point x="-39.75" y="-126.5" />
+      <point x="402.6458333333338" y="712.0" />
+      <point x="307.90795068027245" y="712.0" />
+      <point x="0.0" y="93.5" />
+    </edge>
+    <edge source="fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.order" target="fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.client" relationship="REFERENCES">
+      <point x="61.33333333333334" y="-148.5" />
+      <point x="241.79166666666717" y="1346.0" />
+      <point x="532.3958333333338" y="1346.0" />
+      <point x="0.0" y="115.5" />
+    </edge>
+    <edge source="fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.entity_document" target="fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.people" relationship="REFERENCES">
+      <point x="-19.875" y="-126.5" />
+      <point x="637.7795493197281" y="1326.0" />
+      <point x="622.3958333333338" y="1326.0" />
+      <point x="622.3958333333338" y="722.0" />
+      <point x="530.0095663265308" y="722.0" />
+      <point x="0.0" y="148.5" />
+    </edge>
+    <edge source="fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.entity_document" target="fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.document" relationship="REFERENCES">
+      <point x="59.625" y="-126.5" />
+      <point x="717.2795493197281" y="1346.0" />
+      <point x="805.0095663265308" y="1346.0" />
+      <point x="0.0" y="126.5" />
+    </edge>
+    <edge source="fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.product" target="fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.supplier" relationship="REFERENCES">
+      <point x="0.0" y="-126.5" />
+      <point x="1012.1970663265307" y="1024.0" />
+      <point x="752.9045493197281" y="1024.0" />
+      <point x="0.0" y="115.5" />
+    </edge>
+    <edge source="fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.entity_address" target="fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.client" relationship="REFERENCES">
+      <point x="19.875" y="-126.5" />
+      <point x="437.1779336734697" y="1346.0" />
+      <point x="532.3958333333338" y="1346.0" />
+      <point x="0.0" y="115.5" />
+    </edge>
+    <edge source="fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.user_access" target="fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.people" relationship="REFERENCES">
+      <point x="39.75" y="-126.5" />
+      <point x="482.1458333333338" y="722.0" />
+      <point x="530.0095663265308" y="722.0" />
+      <point x="0.0" y="148.5" />
+    </edge>
+    <edge source="fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.supplier" target="fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.people" relationship="REFERENCES">
+      <point x="0.0" y="-115.5" />
+      <point x="752.9045493197281" y="722.0" />
+      <point x="530.0095663265308" y="722.0" />
+      <point x="0.0" y="148.5" />
+    </edge>
+    <edge source="fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.entity_address" target="fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.supplier" relationship="REFERENCES">
+      <point x="59.625" y="-126.5" />
+      <point x="476.9279336734697" y="1336.0" />
+      <point x="633.3958333333338" y="1336.0" />
+      <point x="633.3958333333338" y="1024.0" />
+      <point x="752.9045493197281" y="1024.0" />
+      <point x="0.0" y="115.5" />
+    </edge>
+    <edge source="fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.entity_document" target="fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.supplier" relationship="REFERENCES">
+      <point x="19.875" y="-126.5" />
+      <point x="677.5295493197281" y="1336.0" />
+      <point x="715.0095663265308" y="1336.0" />
+      <point x="715.0095663265308" y="1024.0" />
+      <point x="752.9045493197281" y="1024.0" />
+      <point x="0.0" y="115.5" />
+    </edge>
+    <edge source="fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.order_item" target="fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.product" relationship="REFERENCES">
+      <point x="61.33333333333334" y="-159.5" />
+      <point x="928.3246173469391" y="1696.0" />
+      <point x="1063.6970663265306" y="1696.0" />
+      <point x="1063.6970663265306" y="1346.0" />
+      <point x="1012.1970663265307" y="1346.0" />
+      <point x="0.0" y="126.5" />
+    </edge>
+    <edge source="fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.order_item" target="fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.price" relationship="REFERENCES">
+      <point x="0.0" y="-159.5" />
+      <point x="866.9912840136058" y="1686.0" />
+      <point x="960.6970663265308" y="1686.0" />
+      <point x="0.0" y="115.5" />
+    </edge>
+    <edge source="fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.entity_document" target="fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.client" relationship="REFERENCES">
+      <point x="-59.625" y="-126.5" />
+      <point x="598.0295493197281" y="1346.0" />
+      <point x="532.3958333333338" y="1346.0" />
+      <point x="0.0" y="115.5" />
+    </edge>
+    <edge source="fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.entity_address" target="fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.people" relationship="REFERENCES">
+      <point x="-19.875" y="-126.5" />
+      <point x="397.4279336734697" y="1326.0" />
+      <point x="352.3958333333338" y="1326.0" />
+      <point x="352.3958333333338" y="722.0" />
+      <point x="530.0095663265308" y="722.0" />
+      <point x="0.0" y="148.5" />
+    </edge>
+    <edge source="fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.order" target="fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.address" relationship="REFERENCES">
+      <point x="0.0" y="-148.5" />
+      <point x="180.45833333333383" y="1346.0" />
+      <point x="162.66666666666669" y="1346.0" />
+      <point x="162.66666666666669" y="372.0" />
+      <point x="186.33333333333337" y="372.0" />
+      <point x="0.0" y="170.5" />
+    </edge>
+    <edge source="fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.client" target="fa808392-2a76-4c5a-8b1c-166b6e2d5b39.TABLE:sales.sales.people" relationship="REFERENCES">
+      <point x="0.0" y="-115.5" />
+      <point x="532.3958333333338" y="722.0" />
+      <point x="530.0095663265308" y="722.0" />
+      <point x="0.0" y="148.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.8786964980544748" showDependencies="false" x="489.5945537065053" y="316.05114579873793" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Columns</Category>
+    <Category>Comments</Category>
+    <Category>Key columns</Category>
+    <Category>Virtual foreign keys</Category>
+  </Categories>
+</Diagram>
+

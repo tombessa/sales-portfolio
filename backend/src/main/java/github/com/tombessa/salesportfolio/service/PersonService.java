@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface PersonService {
     List<Person> findAll();
+    Person create(Person person);
+    Person update(Person person);
 }

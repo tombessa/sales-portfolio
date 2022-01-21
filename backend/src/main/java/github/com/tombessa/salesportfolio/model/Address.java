@@ -3,9 +3,10 @@ package github.com.tombessa.salesportfolio.model;
 import github.com.tombessa.salesportfolio.enums.AddressStatusEnum;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
-import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,19 +48,19 @@ public class Address extends BaseEntity{
     private AddressStatusEnum status;
 
     @Builder.Default
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "deliveryAddress")
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true,mappedBy = "deliveryAddress")
+    @LazyCollection(LazyCollectionOption.TRUE)
     private List<Order> listDeliveryOrder = new ArrayList<>();
 
     @Builder.Default
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "billingAddress")
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true,mappedBy = "billingAddress")
+    @LazyCollection(LazyCollectionOption.TRUE)
     private List<Order> listBillingAddress = new ArrayList<>();
 
     @Builder.Default
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "address")
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true,mappedBy = "address")
+    @LazyCollection(LazyCollectionOption.TRUE)
     private List<EntityAddress> listEntityAddress = new ArrayList<>();
 
-    @Builder.Default
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "address")
-    private List<Person> listPerson = new ArrayList<>();
 
 }

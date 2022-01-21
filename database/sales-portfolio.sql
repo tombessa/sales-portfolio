@@ -67,13 +67,14 @@ ALTER TABLE sales.address ADD CONSTRAINT address_pk PRIMARY KEY ( id );
 
 ALTER TABLE sales.address ALTER COLUMN id SET DEFAULT NEXTVAL('"sales".sq_address'::regclass);
 
+
 CREATE TABLE sales.client (
     id          INTEGER NOT NULL,
     created     TIMESTAMP,
     updated     TIMESTAMP,
     created_by  CHARACTER VARYING(15),
     updated_by  CHARACTER VARYING(15),
-    status      CHARACTER VARYING(20) DEFAULT 'ACTIVE',
+    status      CHARACTER VARYING(20) NOT NULL DEFAULT 'ACTIVE' ,
     people_id   INTEGER NOT NULL,
     name        CHARACTER VARYING(255),
     observation TEXT,
@@ -87,13 +88,16 @@ ALTER TABLE sales.client ADD CONSTRAINT client_pk PRIMARY KEY ( id );
 
 ALTER TABLE sales.client ALTER COLUMN id SET DEFAULT NEXTVAL('"sales".sq_address'::regclass);
 
+--One people must have only one client identified by people and name
+CREATE UNIQUE INDEX unique_client_people_name ON sales.client(people_id, name);
+
 CREATE TABLE sales.document (
     id          INTEGER NOT NULL,
     created     TIMESTAMP,
     updated     TIMESTAMP,
     created_by  CHARACTER VARYING(15),
     updated_by  CHARACTER VARYING(15),
-    status      CHARACTER VARYING(20) DEFAULT 'PENDING',
+    status      CHARACTER VARYING(20) NOT NULL DEFAULT 'PENDING' ,
     type        CHARACTER VARYING(10),
     serial      CHARACTER VARYING(255),
     observation TEXT,
@@ -124,17 +128,19 @@ ALTER TABLE sales.document ADD CONSTRAINT document_pk PRIMARY KEY ( id );
 
 ALTER TABLE sales.document ALTER COLUMN id SET DEFAULT NEXTVAL('"sales".sq_document'::regclass);
 
+CREATE UNIQUE INDEX unique_document_type_serial ON sales.document(type, serial);
+
 CREATE TABLE sales.entity_address (
     id          INTEGER NOT NULL,
     created     TIMESTAMP,
     updated     TIMESTAMP,
     created_by  CHARACTER VARYING(15),
     updated_by  CHARACTER VARYING(15),
-    status      CHARACTER VARYING(20) DEFAULT 'ACTIVE',
-    supplier_id INTEGER NOT NULL,
-    address_id  INTEGER NOT NULL,
-    people_id   INTEGER NOT NULL,
-    client_id   INTEGER NOT NULL,
+    status      CHARACTER VARYING(20) NOT NULL DEFAULT 'ACTIVE' ,
+    supplier_id INTEGER ,
+    address_id  INTEGER ,
+    people_id   INTEGER ,
+    client_id   INTEGER ,
 	version       INTEGER
 );
 
@@ -166,11 +172,11 @@ CREATE TABLE sales.entity_document (
     updated     TIMESTAMP,
     created_by  CHARACTER VARYING(15),
     updated_by  CHARACTER VARYING(15),
-    status      CHARACTER VARYING(20) DEFAULT 'ACTIVE',
-    supplier_id INTEGER NOT NULL,
-    document_id INTEGER NOT NULL,
-    people_id   INTEGER NOT NULL,
-    client_id   INTEGER NOT NULL,
+    status      CHARACTER VARYING(20) NOT NULL DEFAULT 'ACTIVE' ,
+    supplier_id INTEGER ,
+    document_id INTEGER ,
+    people_id   INTEGER ,
+    client_id   INTEGER ,
 	version       INTEGER
 );
 
@@ -308,7 +314,6 @@ CREATE TABLE sales.people (
     created_by CHARACTER VARYING(15),
     updated_by CHARACTER VARYING(15),
     status     CHARACTER VARYING(20) DEFAULT 'PENDING',
-    address_id INTEGER NOT NULL,
     name       CHARACTER VARYING(255),
     cellphone  CHARACTER VARYING(20),
     otherphone CHARACTER VARYING(20),
@@ -323,6 +328,9 @@ ALTER TABLE sales.people
 ALTER TABLE sales.people ADD CONSTRAINT people_pk PRIMARY KEY ( id );
 
 ALTER TABLE sales.people ALTER COLUMN id SET DEFAULT NEXTVAL('"sales".sq_people'::regclass);
+
+--One people must have only one file identified by name
+CREATE UNIQUE INDEX unique_people_status_name ON sales.people(status, name);
 
 CREATE TABLE sales.price (
     id            INTEGER NOT NULL,
@@ -379,6 +387,8 @@ ALTER TABLE sales.product ADD CONSTRAINT product_pk PRIMARY KEY ( id );
 
 ALTER TABLE sales.product ALTER COLUMN id SET DEFAULT NEXTVAL('"sales".sq_product'::regclass);
 
+CREATE UNIQUE INDEX unique_product_name_supplier ON sales.product(name, supplier_id);
+
 CREATE TABLE sales.role (
     id         INTEGER NOT NULL,
     created    TIMESTAMP,
@@ -397,13 +407,15 @@ ALTER TABLE sales.role ADD CONSTRAINT role_pk PRIMARY KEY ( id );
 
 ALTER TABLE sales.role ALTER COLUMN id SET DEFAULT NEXTVAL('"sales".sq_role'::regclass);
 
+CREATE UNIQUE INDEX unique_role_name ON sales.role(name);
+
 CREATE TABLE sales.supplier (
     id          INTEGER NOT NULL,
     created     TIMESTAMP,
     updated     TIMESTAMP,
     created_by  CHARACTER VARYING(15),
     updated_by  CHARACTER VARYING(15),
-    status      CHARACTER VARYING(20) DEFAULT 'ACTIVE',
+    status      CHARACTER VARYING(20) NOT NULL DEFAULT 'ACTIVE' ,
     name        CHARACTER VARYING(255),
     people_id   INTEGER NOT NULL,
     observation TEXT,
@@ -428,6 +440,8 @@ ALTER TABLE sales.supplier
 ALTER TABLE sales.supplier ADD CONSTRAINT supplier_pk PRIMARY KEY ( id );
 
 ALTER TABLE sales.supplier ALTER COLUMN id SET DEFAULT NEXTVAL('"sales".sq_supplier'::regclass);
+
+CREATE UNIQUE INDEX unique_supplier_name_people ON sales.supplier(name, people_id);
 
 CREATE TABLE sales.user_access (
     id         INTEGER NOT NULL,
@@ -455,6 +469,9 @@ CREATE INDEX user_access_idxv1 ON
 
 ALTER TABLE sales.user_access
     ADD CONSTRAINT user_access_ck_1 CHECK ( status IN ( 'PENDING', 'ACTIVE', 'INACTIVE' ) );
+
+--One people must have only one active user_access from specified role
+CREATE UNIQUE INDEX unique_role_people ON sales.user_access(people_id, role_id);
 
 ALTER TABLE sales.user_access ADD CONSTRAINT user_access_pk PRIMARY KEY ( id );
 
@@ -551,7 +568,7 @@ ALTER TABLE sales.user_access
         REFERENCES sales.role ( id );
 
 
-
+COMMIT;
 
 
 -- Relatório do Resumo do Oracle SQL Developer Data Modeler: 

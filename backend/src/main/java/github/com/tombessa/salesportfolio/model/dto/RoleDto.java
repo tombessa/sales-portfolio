@@ -23,5 +23,5 @@ public class RoleDto extends BaseEntityDto{
     @NotNull
     @Enumerated(EnumType.STRING)
     private RoleStatusEnum status;
-    private List<UserAccessDto> roleList;
+    private List<UserAccessDto> userAccessList;
 }

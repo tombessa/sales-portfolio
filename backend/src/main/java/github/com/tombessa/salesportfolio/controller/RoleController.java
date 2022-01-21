@@ -64,6 +64,13 @@ public class RoleController {
                 RoleDto.class);
     }
 
+    @PutMapping("/list")
+    public List<RoleDto> addRoleList(@RequestBody @Valid List<RoleDto> roleDtoList){
+        return this.mapperFacade.mapAsList(
+                this.roleRepository.saveAll(this.mapperFacade.mapAsList(roleDtoList, Role.class)),
+                RoleDto.class);
+    }
+
     @PatchMapping
     public RoleDto updateRole(@RequestBody @Valid RoleDto roleDto){
         return this.mapperFacade.map(

@@ -1,7 +1,8 @@
 package github.com.tombessa.salesportfolio.model;
 
 
-import java.time.LocalDateTime;
+import java.util.Date;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -28,11 +29,11 @@ public abstract class BaseEntity {
     // Auditing
     @Column(name = "created")
     @CreatedDate
-    private LocalDateTime created;
+    private Date created;
 
     @Column(name = "updated")
     @LastModifiedDate
-    private LocalDateTime updated;
+    private Date updated;
     @Column(name = "created_by")
     @CreatedBy
     private String createdBy;

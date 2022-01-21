@@ -3,9 +3,11 @@ package github.com.tombessa.salesportfolio.model;
 import github.com.tombessa.salesportfolio.enums.RoleStatusEnum;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
-import java.time.Instant;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,7 +28,8 @@ public class Role extends BaseEntity{
     private RoleStatusEnum status;
 
     @Builder.Default
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "role")
-    private List<UserAccess> roleList = new ArrayList<>();
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true,mappedBy = "role")
+    @LazyCollection(LazyCollectionOption.TRUE)
+    private List<UserAccess> userAccessList = new ArrayList<>();
 
 }

@@ -1,14 +1,14 @@
-package github.com.tombessa.salesportfolio.model.dto;
+package github.com.tombessa.salesportfolio.model.dto.create.client.query;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import github.com.tombessa.salesportfolio.enums.PersonStatusEnum;
+import github.com.tombessa.salesportfolio.model.dto.BaseEntityDto;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.validation.constraints.NotNull;
-
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -36,8 +36,4 @@ public class PersonDto extends BaseEntityDto {
     private List<ClientDto> clientList  = new ArrayList<>();
     @Builder.Default
     private List<EntityAddressDto> entityAddressList = new ArrayList<>();
-    @Builder.Default
-    private List<SupplierDto> supplierList = new ArrayList<>();
-    @Builder.Default
-    private List<EntityDocumentDto> entityDocumentList = new ArrayList<>();
 }

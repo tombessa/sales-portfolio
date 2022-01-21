@@ -7,8 +7,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
-import java.io.Serializable;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 @Data
 @AllArgsConstructor
@@ -17,10 +16,10 @@ import java.time.LocalDateTime;
 @SuperBuilder
 public abstract class BaseEntityDto {
     private Integer id;
-    @JsonFormat(pattern="MM/dd/yyyy HH:mm:ss")
-    private LocalDateTime created;
-    @JsonFormat(pattern="MM/dd/yyyy HH:mm:ss")
-    private LocalDateTime updated;
+    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MM-dd HH:mm:ss")
+    private Date created;
+    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MM-dd HH:mm:ss")
+    private Date updated;
     private String createdBy;
     private String updatedBy;
     private Integer version;

@@ -3,10 +3,13 @@ package github.com.tombessa.salesportfolio.model;
 import github.com.tombessa.salesportfolio.enums.PersonStatusEnum;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
-import java.time.Instant;
+
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Data
@@ -17,9 +20,6 @@ import java.util.List;
 @Entity
 @Table(name = "people", schema = "sales")
 public class Person extends BaseEntity{
-    @JoinColumn(name = "address_id", referencedColumnName="id", foreignKey = @ForeignKey(name = "entity_address_address_fk"))
-    @ManyToOne(fetch=FetchType.LAZY)
-    private Address address;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "status", length = 20)
@@ -38,26 +38,31 @@ public class Person extends BaseEntity{
     private String email;
 
     @Column(name = "birthdate")
-    private Instant birthdate;
+    private Date birthdate;
 
     @Builder.Default
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "people")
-    private List<UserAccess> personList = new ArrayList<>();
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true,mappedBy = "people")
+    @LazyCollection(LazyCollectionOption.TRUE)
+    private List<UserAccess> userAccessList = new ArrayList<>();
 
     @Builder.Default
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "people")
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true,mappedBy = "people")
+    @LazyCollection(LazyCollectionOption.TRUE)
     private List<Client> clientList = new ArrayList<>();
 
     @Builder.Default
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "people")
-    private List<EntityAddress> listEntityAddress = new ArrayList<>();
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true,mappedBy = "people")
+    @LazyCollection(LazyCollectionOption.TRUE)
+    private List<EntityAddress> entityAddressList = new ArrayList<>();
 
     @Builder.Default
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "people")
-    private List<Supplier> listSupplier = new ArrayList<>();
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true,mappedBy = "people")
+    @LazyCollection(LazyCollectionOption.TRUE)
+    private List<Supplier> supplierList = new ArrayList<>();
 
     @Builder.Default
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "people")
-    private List<EntityDocument> listEntityDocument = new ArrayList<>();
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true,mappedBy = "people")
+    @LazyCollection(LazyCollectionOption.TRUE)
+    private List<EntityDocument> entityDocumentList = new ArrayList<>();
 
 }
