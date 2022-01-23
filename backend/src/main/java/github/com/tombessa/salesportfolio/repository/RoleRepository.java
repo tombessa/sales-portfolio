@@ -11,4 +11,5 @@ public interface RoleRepository extends JpaRepository<Role, Integer> {
     Optional<Role> findByIdAndStatusIn(Integer id, List<RoleStatusEnum> status);
     List<Role> findByStatusIn(List<RoleStatusEnum> status);
     Optional<Role> findByIdAndStatus(Integer id, RoleStatusEnum status);
+    Optional<Role> findByNameAndStatus(String name, RoleStatusEnum status);
 }
